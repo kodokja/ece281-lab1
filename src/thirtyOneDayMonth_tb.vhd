@@ -93,7 +93,19 @@ begin
 		w_sw <= x"0"; wait for 10 ns;
             assert w_Y = '0' report "error on x0" severity failure;
         w_sw <= x"1"; wait for 10 ns;
-            assert w_Y = '1' report "error on Jan" severity failure;   
+            assert w_Y = '1' report "error on Jan" severity failure;
+        w_sw <= x"3"; wait for 10ns;
+            assert w_Y = '1' report "error on Mar" severity failure;
+        w_sw <= x"5"; wait for 10ns;
+            assert w_Y = '1' report "error on May" severity failure;
+        w_sw <= x"7"; wait for 10ns;
+            assert w_Y = '1' report "error on Jul" severity failure;
+        w_sw <= x"8"; wait for 10ns;
+            assert w_Y = '1' report "error on Aug" severity failure;
+        w_sw <= x"A"; wait for 10ns;
+            assert w_Y = '1' report "error on Oct" severity failure;
+        w_sw <= x"C"; wait for 10ns;
+            assert w_Y = '1' report "error on Dec" severity failure;
 
 		wait; -- wait forever
 	end process;	
